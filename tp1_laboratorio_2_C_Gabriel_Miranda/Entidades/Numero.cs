@@ -9,82 +9,123 @@ namespace Entidades
 {
     public class Numero
     {
+        #region Atributos
+        private double numero;
+        #endregion
 
-
-
-
-    }
-
-    /*
-       Respetando los siguientes diagramas,indicaciones, y lo visto en la cursada, así como reutilizando código cada vez 
-    que sea posible, realizar una calculadora de operaciones básicas:Generar un proyecto llamado Entidades
-    con las siguientes clases:
-    Clase estática Calculadora:•El método ValidarOperador será privado y estático. 
-    Deberá validar que el operador recibido sea  
-    Caso contrario retornará +.
-    •El método Operar será de clase: validará y realizará la operación pedida entre ambos números.
-     */
-    /// <summary>
-    /// Clase Estatica encargada de realizar operaciones de +, -, / o *.
-    /// </summary>
-    public static class Calculadora {
-        #region Metodos
+        #region Constructores
         /// <summary>
-        /// Verifica que lo recibido es valido y hace la operación seleccionada
+        /// Constructor por defecto, asignará valor 0 al atributo numero.
         /// </summary>
-        /// </summary>
-        /// <param name="num1">Primer dato Numero</param>
-        /// <param name="num2">Segundo dato Numero</param>
-        /// <param name="operador">Operacion a realizar</param>
-        /// <returns>Retornara el resultado de la operacion, o en caso de una division por 0, retornará double.MinValue.</returns>
-        public static double Operar(Numero num1, Numero num2, string operador)
+        public Numero()
         {
-           
-            double resultado = 0;
-            
-
-                switch (ValidarOperador(operador))
-                {
-                    case "+":
-                        resultado = (num1+num2);
-                        break;
-                    case "-":
-                        resultado = (num1-num2);
-                        break;
-                    case "*":
-                        resultado = (num1 * num2);
-                        break;
-                    case "/":
-                        resultado = (num1 / num2);
-                        break;
-                    default:
-                        break;
-                }
-
-                return resultado;
-
+            this.numero = 0;
         }
-
-        private static string ValidarOperador(string operador)
+        /// <summary>
+        /// Sobrecarga de constructor, asignará el numero ingresado por parametro como valor al atributo numero.
+        /// </summary>
+        /// <param name="numero"></param>
+        public Numero(double numero)
         {
-
-            if (operador == "+" || operador == "-" || operador == "/" || operador == "*")
-            {
-
-                return operador;
-
-            }
-            else{
-
-                return "+";
-            }
-
-
+            this.numero = numero;
+        }
+        /// <summary>
+        /// Sobrecarga de constructor, hara la conversion de cadena de texto a numero y asignará el valor al atributo numero.
+        /// </summary>
+        /// <param name="strNumero"></param>
+        public Numero(string strNumero)
+        {
+            SetNumero = strNumero;
         }
         #endregion
 
+        #region Sobrecarga de operadores
+
+        public static double operator -(Numero n1, Numero n2)
+        {
+
+            return (n1.numero - n2.numero);
+        }
+
+        public static double operator +(Numero n1, Numero n2)
+        {
+            return (n1.numero + n2.numero);
+        }
+
+        public static double operator *(Numero n1, Numero n2)
+        {
+            return (n1.numero * n2.numero);
+        }
+        public static double operator /(Numero n1, Numero n2)
+        {
+            return (n1.numero / n2.numero);
+        }
+        #endregion
+        #region Metodos Publicos
+        
+        public string BinarioDecimal(string binario)
+        {
+            double n = 0;
+            if (EsBinario(binario))
+            {
+               
 
 
+            }
+            
+
+        }
+        
+        public string DecimalBinario(double numero)
+        {
+
+        }
+
+        public string DecimalBinario(string numero)
+        {
+
+        }
+        
+        #endregion
+
+        #region Metodos privados
+        private double ValidarNumero(string strNumero)
+        {
+            if (double.TryParse(strNumero, out double numero))
+            {
+                return numero;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        private bool EsBinario(string binario)
+        {
+
+            foreach (char auxBuscador in binario)
+            {
+                if (auxBuscador == '1' || auxBuscador == '0')
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        #endregion
+
+        #region Propiedades
+        public string SetNumero
+        {
+            set
+            {
+                this.numero = ValidarNumero(value);
+            }
+        }
+        #endregion
     }
 
+
 }
+
+
