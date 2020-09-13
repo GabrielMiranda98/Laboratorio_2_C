@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entidades
 {
@@ -61,31 +56,39 @@ namespace Entidades
             return (n1.numero / n2.numero);
         }
         #endregion
-        #region Metodos Publicos
         
+        #region Metodos Publicos
+
         public string BinarioDecimal(string binario)
         {
             double n = 0;
+
             if (EsBinario(binario))
             {
-               
+                for (int i = 0; i < binario.Length - 1; i++)
+                {
 
+
+                }
 
             }
-            
+
+
 
         }
-        
+
         public string DecimalBinario(double numero)
         {
-
+            int numeroAbsoluto = (int)Math.Abs(numero);
+            return Convert.ToString(numeroAbsoluto, 2);
         }
 
         public string DecimalBinario(string numero)
         {
 
+
         }
-        
+
         #endregion
 
         #region Metodos privados
