@@ -14,7 +14,7 @@ namespace Entidades
     public static class Calculadora
     {
 
-        #region Metodos
+        #region Metodos Estaticos
         /// <summary>
         /// Verifica que lo recibido es valido y hace la operación seleccionada
         /// </summary>
@@ -27,26 +27,27 @@ namespace Entidades
         {
 
             double resultado = 0;
-
-            if(char.TryParse(operador,out char aux))
-            switch (ValidarOperador(aux))
-            {
-                case "+":
-                    resultado = (num1 + num2);
-                    break;
-                case "-":
-                    resultado = (num1 - num2);
-                    break;
-                case "*":
-                    resultado = (num1 * num2);
-                    break;
-                case "/":
-                    resultado = (num1 / num2);
-                    break;
-                default:
-                    break;
-            }
-
+            char aux;
+            if (char.TryParse(operador, out aux))
+            
+                switch (ValidarOperador(aux))
+                {
+                    case "+":
+                        resultado = (num1 + num2);
+                        break;
+                    case "-":
+                        resultado = (num1 - num2);
+                        break;
+                    case "*":
+                        resultado = (num1 * num2);
+                        break;
+                    case "/":
+                        resultado = (num1 / num2);
+                        break;
+                    default:
+                        break;
+                }
+            
             return resultado;
 
         }
@@ -76,5 +77,6 @@ namespace Entidades
         #endregion
 
     }
+}
 
 

@@ -53,28 +53,24 @@ namespace Entidades
         }
         public static double operator /(Numero n1, Numero n2)
         {
-            return (n1.numero / n2.numero);
+            double aux=double.MinValue;
+            if (n2.numero != 0) { aux= (n1.numero / n2.numero); }
+            return aux;
         }
         #endregion
-        
+
         #region Metodos Publicos
 
         public string BinarioDecimal(string binario)
         {
-            double n = 0;
+            string retorno = "Valor inválido";
 
             if (EsBinario(binario))
             {
-                for (int i = 0; i < binario.Length - 1; i++)
-                {
-
-
-                }
-
+                retorno = Convert.ToInt32(binario, 2).ToString();
             }
 
-
-
+            return retorno;
         }
 
         public string DecimalBinario(double numero)
@@ -85,10 +81,20 @@ namespace Entidades
 
         public string DecimalBinario(string numero)
         {
+            string retorno = "Valor inválido";
+            double value = 0;
+            uint value2 = 0;
+            if (double.TryParse(numero, out value))
+            {
+                if (UInt32.TryParse(numero, out value2))
+                {
+                    retorno = Convert.ToString(Convert.ToInt32(numero, 10), 2);
+                }
+            }
 
+            return retorno;
 
         }
-
         #endregion
 
         #region Metodos privados
@@ -105,7 +111,6 @@ namespace Entidades
         }
         private bool EsBinario(string binario)
         {
-
             foreach (char auxBuscador in binario)
             {
                 if (auxBuscador == '1' || auxBuscador == '0')

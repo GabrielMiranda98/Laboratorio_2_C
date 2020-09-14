@@ -1,0 +1,7 @@
+D:\UTN_2020_2_C\PROG\Workspace\tp_laboratorio_2\tp1_laboratorio_2_C_Gabriel_Miranda\Entidades\bin\Debug\Entidades.exe.config
+D:\UTN_2020_2_C\PROG\Workspace\tp_laboratorio_2\tp1_laboratorio_2_C_Gabriel_Miranda\Entidades\bin\Debug\Entidades.exe
+D:\UTN_2020_2_C\PROG\Workspace\tp_laboratorio_2\tp1_laboratorio_2_C_Gabriel_Miranda\Entidades\bin\Debug\Entidades.pdb
+D:\UTN_2020_2_C\PROG\Workspace\tp_laboratorio_2\tp1_laboratorio_2_C_Gabriel_Miranda\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+D:\UTN_2020_2_C\PROG\Workspace\tp_laboratorio_2\tp1_laboratorio_2_C_Gabriel_Miranda\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\UTN_2020_2_C\PROG\Workspace\tp_laboratorio_2\tp1_laboratorio_2_C_Gabriel_Miranda\Entidades\obj\Debug\Entidades.exe
+D:\UTN_2020_2_C\PROG\Workspace\tp_laboratorio_2\tp1_laboratorio_2_C_Gabriel_Miranda\Entidades\obj\Debug\Entidades.pdb
